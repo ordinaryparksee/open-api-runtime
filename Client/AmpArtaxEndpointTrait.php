@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 trait AmpArtaxEndpointTrait
 {
-    abstract protected function transformResponseBody(string $body, int $status, SerializerInterface $serializer);
+    abstract protected function transformResponseBody(string $body, int $status, SerializerInterface $serializer, string $contentType = null);
 
     public function parseArtaxResponse(Response $response, SerializerInterface $serializer, string $fetchMode = Client::FETCH_OBJECT): Promise
     {
